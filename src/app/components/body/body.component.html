@@ -1,2 +1,24 @@
 <!DOCTYPE html>
-<h1>Body Component</h1>
+
+<div class="row">
+  <div class="col d-flex flex-column align-items-end">
+    <h2>*ngIf</h2>
+    <div *ngIf="show" class="card text-white bg-dark mb-3" style="width: 100%">
+      <div class="card-body">
+        <h5 class="card-title">{{ phrase.author }}</h5>
+        <p class="card-text">{{ phrase.message }}</p>
+      </div>
+    </div>
+    <button (click)="show = !show" class="btn btn-outline-dark">
+      Mostrar/Ocultar
+    </button>
+  </div>
+  <div class="col">
+    <h2>*ngFor</h2>
+    <ul class="list-group">
+      <li *ngFor="let char of characters" class="list-group-item">
+        {{ char }}
+      </li>
+    </ul>
+  </div>
+</div>
